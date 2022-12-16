@@ -1,3 +1,4 @@
+![](UTA-DataScience-Logo.png)
 # Stores Sales - Time Series Forecasting
 
 * **This repository holds an attempt to apply time-series forecasting techniques using data from
@@ -50,8 +51,24 @@ the Store Sales - Time Series Forecasting Kaggle challenge (https://www.kaggle.c
 * I would first fix my implementation of a hybrid model to see how well prediections are.
 * I would then move on to applying other machine learning from scikit-learn to see which would be best to use.
 
+# How to reproduce results
+
+* Results can be reproduced by downloading the code from the jupyter notebook in this repository and running it. 
+* Note that data from csv files must be downloaded and loaded for the jupyter notebook to run the code.
+   * For instance, if the name for training set is different, then you must manually change the string that initializes the DataFrames.
+``` df_train = pd.read_csv(YOURSTRINGHERE) ```
+* Also note that required packages must be installed before running code, which are provided below.
+
+### Overview of files in repository
+
+* The general information about this project is all in this README file, and the code that I worked on, which can be downloaded to reproduce the results I obtained, is found in the JupyterNotebook folder. 
+
 ### Software Setup
-* numpy, pandas, matplotlib, statsmodels, scikitlearn, learntools
+* The packages that were used for this project are numpy, pandas, matplotlib.pyplot, seaborn, statsmodels, scikitlearn, xgboost, and learntools.
+  * CalendarFourier and DeterministicProcess were imported from statsmodels.
+  * LinearRegression, train_test_split, mean_squared_log_error, and LabelEncoder were imported from scikitlearn.
+  * XBGRegressor was imported from xgboost.
+  * From learntools, plot_periodogram and seasonal_plot were imported. 
 * Installing nonstandard packages (learntools):
 ``` 
 pip install git+https://github.com/Kaggle/learntools.git 
