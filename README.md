@@ -15,15 +15,17 @@ the Store Sales - Time Series Forecasting Kaggle challenge (https://www.kaggle.c
 ### Data
 
 * Data (124.76MB):
-  * train.csv - Training data set with features such as store_nbr, family, onpromotion, and sales
+  * train.csv - Training data set with features such as id, date, store_nbr, family, onpromotion, and sales
   * test.csv - Testing data set with 15 days after last date from training data
   * sample_submission.csv
   * stores.csv - Includes features that give more info on stores like city, state, type, and cluster
   * oil.csv - Daily oil prices
   * holiday_events.csv - Holiday/events metadata
+*Training data set holds 3,000,888 instances with 6 features while test set has around 30,000 instances with the same features as the training set.
 
 #### Preprocessing / Clean up
 
+* In order to preprocess the data, I 
 * Modified original dataframe to show average sales of each day so it would be easier to visualize and use the data.
 
 #### Data Visualization
