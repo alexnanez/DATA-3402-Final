@@ -21,7 +21,7 @@ the Store Sales - Time Series Forecasting Kaggle challenge (https://www.kaggle.c
   * stores.csv - Includes features that give more info on stores like city, state, type, and cluster
   * oil.csv - Daily oil prices
   * holiday_events.csv - Holiday/events metadata
-*Training data set holds 3,000,888 instances with 6 features while test set has around 30,000 instances with the same features as the training set.
+* Training data set holds 3,000,888 instances with 6 features while test set has around 30,000 instances with the same features as the training set.
 
 #### Preprocessing / Clean up
 
@@ -29,6 +29,15 @@ the Store Sales - Time Series Forecasting Kaggle challenge (https://www.kaggle.c
 * To use the data for the hybrid model which included the family feature as part of the input, I used the same method as before but grouped by date and family.
 
 #### Data Visualization
+This graph shows the prices of oil in Ecuador based on the dates from the training set.
+<img width="546" alt="Capture" src="https://user-images.githubusercontent.com/98188428/208080640-9141c5bd-6075-4e19-919f-f3d61d91f1ae.PNG">
+
+This pie chart shows all the types of products that are sold in the grocery stores.
+
+<img width="443" alt="Pie" src="https://user-images.githubusercontent.com/98188428/208081207-66559bb7-910b-4ba5-8c4c-d2cf7a034ea1.PNG">
+
+This graph shows a time plot for Store 1 from the training set.
+<img width="611" alt="Timeplot" src="https://user-images.githubusercontent.com/98188428/208081518-1b2a779e-44e7-46a8-b99a-ed17c116a318.PNG">
 
 ### Problem Formulation
 
@@ -37,8 +46,20 @@ the Store Sales - Time Series Forecasting Kaggle challenge (https://www.kaggle.c
   * Output: The output for all of these models was sales since I am supposed to predict the sales of all the products given the features as input.
   * Models
     * First, I looked at the trend of the average sales by making a trend model and tried predicting the sales of the next 15 days using a validation set and checking the Root Mean Squared Logarithmic Error (RMSLE) scores.
+    * <img width="701" alt="Trend" src="https://user-images.githubusercontent.com/98188428/208082155-69fc80d0-eda7-449f-958b-08467145b9a2.PNG">
+    * <img width="327" alt="Forecast" src="https://user-images.githubusercontent.com/98188428/208082229-da63efd0-07a6-4070-a4bd-4993688140ea.PNG">
+
     * Then, I looked at the seasonality of the data set and tried to get better predictions this way by taking into account holiday data.
-    * I also attempted using a Hybrid model scikitlearn's LinearRegression model and xgboost's XGBRegressor model
+    * <img width="338" alt="Seasonalplot" src="https://user-images.githubusercontent.com/98188428/208082350-f1709fc1-cc50-41d2-85c9-c1df6dc252e4.PNG">
+    * <img width="343" alt="Periodogram" src="https://user-images.githubusercontent.com/98188428/208082412-8c849fdb-492f-4a2c-95bf-2bf89dfe2af9.PNG">
+    * <img width="361" alt="First" src="https://user-images.githubusercontent.com/98188428/208082454-18a9b964-f05d-452a-9fdd-c26656277ec5.PNG">
+    * <img width="519" alt="Deseasonalized" src="https://user-images.githubusercontent.com/98188428/208082626-c3473c7a-2df9-44bd-8bc4-070ed8c9f49d.PNG">
+    * <img width="326" alt="Holidays" src="https://user-images.githubusercontent.com/98188428/208082664-5ed59a7e-34a3-426d-b7f4-0c2c740cadea.PNG">
+    * <img width="347" alt="Second" src="https://user-images.githubusercontent.com/98188428/208082723-260a9809-c20c-4ac9-ade9-189175689c17.PNG">
+
+    * I also attempted a hybrid model using scikitlearn's LinearRegression model and xgboost's XGBRegressor model.
+    * <img width="643" alt="Hybrid" src="https://user-images.githubusercontent.com/98188428/208083791-d9bedd26-3ad0-422a-8c04-3f670cbda84a.PNG">
+
 
 ### Training
 
