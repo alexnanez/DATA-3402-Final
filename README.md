@@ -25,16 +25,16 @@ the Store Sales - Time Series Forecasting Kaggle challenge (https://www.kaggle.c
 
 #### Preprocessing / Clean up
 
-* In order to preprocess the data, I 
-* Modified original dataframe to show average sales of each day so it would be easier to visualize and use the data.
+* In order to preprocess the data, I used the groupby function on the original DataFrame to group all of the sales of each day and compute the mean of them. This DataFrame was then stored into the variable "average_sales" and then used for the trend and seasonality models.
+* To use the data for the hybrid model which included the family feature as part of the input, I used the same method as before but grouped by date and family.
 
 #### Data Visualization
 
 ### Problem Formulation
 
 * Define:
-  * Input: Features (store_nbr, family, onpromotion)
-  * Output: Sales
+  * Input: The input for the trend model was the average_sales DataFrame which I explained before as having the data and mean sales for each day as features. The input for the seasonality model was the same average_sales DataFrame but the holiday_events information also added. The input for the hybrid model was also the average_sales DataFrame with the family feature also as an input.
+  * Output: The output for all of these models was sales since I am supposed to predict the sales of all the products given the features as input.
   * Models
     * First, I looked at the trend of the average sales by making a trend model and tried predicting the sales of the next 15 days using a validation set and checking the Root Mean Squared Logarithmic Error (RMSLE) scores.
     * Then, I looked at the seasonality of the data set and tried to get better predictions this way by taking into account holiday data.
@@ -51,7 +51,7 @@ the Store Sales - Time Series Forecasting Kaggle challenge (https://www.kaggle.c
 ### Future Work
 
 * I would first fix my implementation of a hybrid model to see how well prediections are.
-* I would then move on to applying other machine learning from scikit-learn to see which would be best to use.
+* I would then move on to applying other machine learning algorithms from scikit-learn to see which would be best to use.
 
 # How to reproduce results
 
